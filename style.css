@@ -1,0 +1,223 @@
+*:not(dialog),
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+header nav {
+  background-color: #4bbd4b;
+  padding: 24px 0;
+
+  & a {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+    @media only screen and (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+
+  & .nav-brand {
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  & ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    list-style: none;
+
+    & a {
+      position: relative;
+
+      &::after {
+        height: 2px;
+        width: 0;
+        background: white;
+        content: "";
+        position: absolute;
+
+        bottom: -2px;
+        left: 0;
+
+        transition: all 0.3s;
+      }
+
+      &:hover {
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+header .banner {
+  background-image: url("Rapru.jpg");
+  width: 100%;
+  margin: 24px 0;
+  display: block;
+  aspect-ratio: 1000/420;
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+
+  @media only screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .blog-section {
+    background-color: #ccc;
+    padding: 24px;
+    border-radius: 5px;
+
+    & h2 {
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    & ul {
+      list-style: none;
+    }
+
+    & ul li {
+      background-color: #fff;
+      padding: 8px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+
+      & a {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+    & ul li img {
+      height: 60px;
+      width: auto;
+    }
+
+    & > a {
+      text-decoration: none;
+    }
+  }
+
+  .about-section {
+    & hr {
+      margin: 20px 0;
+    }
+
+    & .summary {
+      & h2 {
+        text-align: center;
+        margin-bottom: 12px;
+      }
+
+      & p {
+        text-align: justify;
+        text-justify: inter-word;
+      }
+    }
+
+    & .contact {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    & .contact .email {
+      & input {
+        padding: 6px 2px;
+        font: inherit;
+      }
+      & button {
+        padding: 6px 10px;
+        border: none;
+        background: #e66a05;
+        color: #fff;
+        font: inherit;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+footer {
+  background-color: #333;
+  padding: 44px 0;
+  margin-top: 24px;
+
+  & .footer-wrapper {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    color: #fff;
+  }
+
+  & ul {
+    display: flex;
+    gap: 8px;
+    list-style: none;
+
+    & a {
+      text-decoration: none;
+      color: inherit;
+
+      position: relative;
+
+      &::after {
+        height: 2px;
+        width: 0;
+        background: white;
+        content: "";
+        position: absolute;
+
+        bottom: -2px;
+        left: 0;
+
+        transition: all 0.3s;
+      }
+
+      &:hover {
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
